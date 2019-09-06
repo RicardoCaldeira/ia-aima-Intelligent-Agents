@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<head>
+    <title>Intelligent Agents - IA - UFLA</title>
+    <style>
+        .floor:hover { cursor: pointer; }
+        .agent-actions { margin-left: auto; margin-right: auto; border-collapse: collapse; }
+        .agent-actions th { padding: 0.5ex; border: 1px solid hsl(240,10%,90%); background: hsl(240,10%,85%); text-align: center; }
+        .agent-actions td { padding: 0.25ex; border: 1px solid hsl(240,20%,80%); text-align: center; }
+
+        .robot { transition: transform 1.5s; }
+        .floor { fill: white; }
+        .floor.clean { fill: hsl(240,10%,90%); transition: fill 0.5s; }
+        .floor.dirty { fill: rgb(255, 0, 6); transition: fill 0.5s; }
+        .floor.veryDirty { fill: black; transition: fill 0.1s; }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-6 col-md-offset-3" id="content">
+            <h1>Random Vacuum Agent 4 places</h1>
+            <div id="agent-controlled-diagram">
+                <p style="padding-bottom: 50px; padding-top: 25px;">
+                    Code of
+                    <a href="https://github.com/aimacode/aima-javascript/tree/master/2-Intelligent-Agents" target="_blank">aima-javascipt</a><br>Guilherme Haddad<br>Ricardo Caldeira
+                </p>
+                <svg width="1000" height="1000"></svg>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script type="text/javascript" src="cleaningRobot.js"></script>
+<script type="text/javascript" src="c_cleaningRobot.js"></script>
+</html>
