@@ -20,7 +20,7 @@ function makeDiagram(selector) {
    diagram.robot.append('rect')
        .attr('width', SIZE)
        .attr('height', SIZE - 40)
-       .attr('fill', 'hsl(10, 55%, 50%)');
+       .attr('fill', 'rgb(8, 33, 160)');
    diagram.perceptText = diagram.robot.append('text')
        .attr('x', SIZE/2)
        .attr('y', -25)
