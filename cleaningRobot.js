@@ -30,6 +30,7 @@ class World {
             break;
         
         case 'LEFT'://2
+            // se o bloco anterior está sujo, volta ate ele e limpa. Se não, continua o fluxo padrão.
             if (((this.location == 2 && this.floors[3].veryDirty) || (this.location == 2 && this.floors[3].dirty)) == true){
                 this.location = 3;
             }else{
@@ -40,6 +41,7 @@ class World {
             break;
        
         case 'RIGHT'://1
+            // se o bloco anterior está sujo, volta ate ele e limpa. Se não, continua o fluxo padrão.
             if (((this.location == 1 && this.floors[0].veryDirty) || (this.location == 1 && this.floors[0].dirty) == true)){
                 this.location = 0;
             }else{
@@ -50,6 +52,7 @@ class World {
             break;
         
         case 'DOWN'://3
+            // se o bloco anterior está sujo, volta ate ele e limpa. Se não, continua o fluxo padrão.
             if (((this.location == 3 && this.floors[1].veryDirty) || (this.location == 3 && this.floors[1].dirty) == true)){
                 this.location = 1;
             }else{
@@ -60,6 +63,7 @@ class World {
             break;
         
         case 'UP'://0
+            // se o bloco anterior está sujo, volta ate ele e limpa. Se não, continua o fluxo padrão.
             if (((this.location == 0 && this.floors[2].veryDirty) || (this.location == 0 && this.floors[2].dirty) == true)){
                 this.location = 2;
             }else{
