@@ -57,8 +57,7 @@ function makeDiagram(selector) {
 
 function renderWorld(diagram) {
    for (let floorNumber = 0; floorNumber < diagram.world.floors.length; floorNumber++) {
-       diagram.floors[floorNumber].attr('class', diagram.world.floors[floorNumber].veryDirty? 'veryDirty floor'
-        : diagram.world.floors[floorNumber].dirty? 'dirty floor' : 'clean floor');
+       diagram.floors[floorNumber].attr('class', diagram.world.floors[floorNumber].veryDirty ? 'veryDirty floor' : diagram.world.floors[floorNumber].dirty ? 'dirty floor' : 'clean floor');
    }
    diagram.robot.style('transform', `translate(${diagram.xPosition(diagram.world.location)}px,${diagram.yPosition(diagram.world.location)}px)`);
 }
@@ -74,7 +73,7 @@ diagram.actionText.text(actionLabel);
 }
 
 
-const STEP_TIME_MS = 2500;
+const STEP_TIME_MS = 3000;
 function makeAgentControlledDiagram() {
    let diagram = makeDiagram('#agent-controlled-diagram svg');
 
