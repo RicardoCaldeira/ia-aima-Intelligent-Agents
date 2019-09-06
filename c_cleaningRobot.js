@@ -19,7 +19,7 @@ function makeDiagram(selector) {
        .style('transform', `translate(${diagram.xPosition(world.location)}px,50px)`);
    diagram.robot.append('rect')
        .attr('width', SIZE)
-       .attr('height', SIZE - 40)
+       .attr('height', SIZE/3)
        .attr('fill', 'rgb(8, 33, 160)');
    diagram.perceptText = diagram.robot.append('text')
        .attr('x', SIZE/2)
@@ -49,8 +49,6 @@ function makeDiagram(selector) {
                 diagram.floors[floorNumber].attr('class', 'veryDirty floor');
             });
    }
-   
-   
    return diagram;
 }
 
@@ -68,8 +66,8 @@ function renderAgentPercept(diagram, dirty) {
 }    
 
 function renderAgentAction(diagram, action) {
-let actionLabel = {null: 'Waiting', 'SUCK': 'Vacuuming', 'CLEAN': 'Cleaning'}[action];
-diagram.actionText.text(actionLabel);
+    let actionLabel = {null: 'Waiting', 'SUCK': 'Vacuuming', 'CLEAN': 'Cleaning'}[action];
+    diagram.actionText.text(actionLabel);
 }
 
 
@@ -82,7 +80,7 @@ function makeAgentControlledDiagram() {
        let percept = 0;
        if (diagram.world.floors[location].veryDirty) {
            percept = 2;
-       }else if (diagram.world.floors[location].dirty){
+       } else if (diagram.world.floors[location].dirty){
            percept = 1;
        }
        let action = reflexVacuumAgent(diagram.world);
@@ -92,8 +90,10 @@ function makeAgentControlledDiagram() {
        renderAgentPercept(diagram, percept);
        renderAgentAction(diagram, action);
    }
+
    update();
    setInterval(update, STEP_TIME_MS);
+   
 }
 
 makeAgentControlledDiagram();

@@ -24,9 +24,11 @@ class World {
         case 'CLEAN':
             this.floors[this.location].veryDirty = false;
             break;
+        
         case 'SUCK':
             this.floors[this.location].dirty = false;
             break;
+        
         case 'LEFT'://2
             if (((this.location == 2 && this.floors[3].veryDirty) || (this.location == 2 && this.floors[3].dirty)) == true){
                 this.location = 3;
@@ -36,6 +38,7 @@ class World {
                 }
             }
             break;
+       
         case 'RIGHT'://1
             if (((this.location == 1 && this.floors[0].veryDirty) || (this.location == 1 && this.floors[0].dirty) == true)){
                 this.location = 0;
